@@ -5,20 +5,10 @@ interface HeaderProps {
   setIsMobileMenuOpen: (value: boolean) => void;
 }
 
-const blinkStyle = `
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-  .blink-animate {
-    animation: blink 1.5s infinite;
-  }
-`;
 
 export default function Header({ isMobileMenuOpen, setIsMobileMenuOpen }: HeaderProps) {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <style>{blinkStyle}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-4">
@@ -29,7 +19,7 @@ export default function Header({ isMobileMenuOpen, setIsMobileMenuOpen }: Header
               </span>
             </div>
             {/* Demo Message Badge */}
-            <div className="flex bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-2xl text-xs sm:text-sm font-semibold shadow-lg blink-animate">
+            <div className="flex items-center bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-2xl text-xs sm:text-sm font-semibold shadow-lg animate-pulse">
               <span>Only Demo Purpose</span>
             </div>
           </div>
